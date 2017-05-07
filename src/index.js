@@ -1,9 +1,7 @@
 const http = require("http");
-const path = require("path");
-const fs = require("fs");
 const express = require("express");
-const multer = require("multer");
-const upload = multer({dest: "./uploads/"});
+// const multer = require("multer");
+// const upload = multer({dest: "./uploads/"});
 const logger = require("morgan");
 const jsonParser = require("body-parser").json;
 const app = express();
