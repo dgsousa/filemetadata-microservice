@@ -14,9 +14,9 @@ const port = process.env.PORT || 3000;
 app.use(logger("dev"));
 app.use(jsonParser());
 
-app.use("/", upload.any(), express.static("public"));
+app.use("/", express.static("public"));
 
-app.post("/file", (req, res, next) => {
+app.post("/file", upload.any(), (req, res, next) => {
 	res.status(200);
 	res.json({
 		size: req.files[0].size
