@@ -16,12 +16,12 @@ app.use(jsonParser());
 
 app.use("/", express.static("public"));
 
-app.post("/file", upload.any(), (req, res, next) => {
-	res.status(200);
-	res.json({
-		size: req.files[0].size
-	});
-})
+// app.post("/file", upload.any(), (req, res, next) => {
+// 	res.status(200);
+// 	res.json({
+// 		size: req.files[0].size
+// 	});
+// })
 
 
 app.listen(port, () => {
