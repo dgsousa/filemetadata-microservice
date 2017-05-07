@@ -1,7 +1,6 @@
-const http = require("http");
 const express = require("express");
-// const multer = require("multer");
-// const upload = multer({dest: "./uploads/"});
+const multer = require("multer");
+const upload = multer({dest: "./uploads/"});
 const logger = require("morgan");
 const jsonParser = require("body-parser").json;
 const app = express();
@@ -14,12 +13,12 @@ app.use(jsonParser());
 
 app.use("/", express.static("public"));
 
-// app.post("/file", upload.any(), (req, res, next) => {
-// 	res.status(200);
-// 	res.json({
-// 		size: req.files[0].size
-// 	});
-// })
+app.post("/file", upload.any(), (req, res, next) => {
+	res.status(200);
+	res.json({
+		size: req.files[0].size
+	});
+})
 
 
 app.listen(port, () => {
